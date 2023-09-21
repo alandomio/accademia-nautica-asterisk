@@ -18,5 +18,3 @@ Il telefono Snom si riavvierà, resettando tutte le impostazioni.
 
 - Tutte le modifiche alla configurazione sul telefono saranno cancellate.
 - Tutte le voci della rubrica locale saranno perse.
-
-Grazie per avermi fatto notare l'errore, e spero che queste istruzioni siano più accurate.
