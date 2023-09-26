@@ -34,6 +34,30 @@ Collegare due telefoni SIP (SNOM) a un centralino Asterisk e effettuare una chia
      context=internal
      ```
 
+
+### Configurazione delle Porte
+
+1. **Configurazione Firewall su Windows**: Vai al pannello di controllo del Firewall di Windows e aggiungi una regola in entrata e una in uscita per consentire il traffico sulla porta 5060 (SIP) e sulle porte RTP (es. 10000-20000).
+
+2. **Modificare il file `sip.conf` e `rtp.conf`**: 
+    - Apri `/etc/asterisk/sip.conf` e configura la sezione `[general]` per ascoltare su tutte le interfacce:
+        ```ini
+        [general]
+        bindaddr=0.0.0.0
+        ```
+    - Apri `/etc/asterisk/rtp.conf` e configura le porte RTP:
+        ```ini
+        [general]
+        rtpstart=10000
+        rtpend=20000
+        ```
+
+3. **Ricarica la configurazione di Asterisk**:
+    ```bash
+    sudo asterisk -rx "sip reload"
+    sudo asterisk -rx "rtp reload"
+    ```
+
 3. **Configurazione Dial Plan**
    - Modificare il file `/etc/asterisk/extensions.conf`
    - Aggiungere le seguenti righe:
