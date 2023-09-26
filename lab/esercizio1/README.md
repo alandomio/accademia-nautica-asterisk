@@ -78,4 +78,3 @@ Collegare due telefoni SIP (SNOM) a un centralino Asterisk e effettuare una chia
 6. **Test Chiamata**
    - Effettuare una chiamata da `phone1` a `phone2` utilizzando il numero interno (e.g., 1002).
 
-Ecco un riassunto su come potresti impostare le tue slide e la tua esercitazione di laboratorio. Sentiti libero di adattarlo alle tue specifiche esigenze.
