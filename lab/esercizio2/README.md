@@ -1,6 +1,4 @@
-Certamente, ecco un esempio di struttura per un documento di esercitazione che integra gli argomenti delle slide:
 
----
 
 # Esercitazione su Messa in Sicurezza di Asterisk
 
