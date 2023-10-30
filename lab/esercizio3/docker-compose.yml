@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  freepbx:
+    image: tiredofit/freepbx
+    container_name: freepbx
+    environment:
+      - DB_EMBEDDED=TRUE
+    ports:
+      - "80:80"
+      - "5060:5060/udp"
+      - "5160:5160/udp"
+      - "18000-18100:18000-18100/udp"
+    networks:
+      - freepbx-net
+    volumes:
+      - freepbx-data:/data
+
+networks:
+  freepbx-net:
+    driver: bridge
+
+volumes:
+  freepbx-data:
