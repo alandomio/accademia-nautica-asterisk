@@ -57,5 +57,3 @@ Effettua una chiamata di test per assicurarti che la configurazione sia corretta
 - **Sicurezza**: Assicurati che la configurazione sia sicura. Considera l'utilizzo di firewall, fail2ban e la disattivazione di `allowguest` in `sip.conf`.
 - **Codec e Qualità del Suono**: Assicurati di configurare i codec corretti per una buona qualità del suono.
 - **Backup e Monitoraggio**: Considera la creazione di backup regolari delle configurazioni e l'implementazione di un sistema di monitoraggio.
-
-Questa guida fornisce le basi per la configurazione di un provider VoIP in Asterisk, ma ogni provider potrebbe avere requisiti specifici, quindi è sempre una buona pratica consultare la documentazione del provider per dettagli aggiuntivi o requisiti specifici.
