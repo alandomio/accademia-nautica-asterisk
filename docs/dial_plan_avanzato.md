@@ -260,6 +260,59 @@ Qui, solo gli utenti nel contesto `utenti_normali` e con il loro numero in `allo
 - **Alert**: Implementa sistemi di alert in tempo reale per attività sospette.
 
 
+### 7. Gestione Avanzata delle Code in Asterisk
+
+
+Le code di chiamata in Asterisk sono un elemento vitale per molte aziende, in particolare per i call center. La gestione avanzata di queste code non si limita solo a mettere in coda le chiamate in attesa; comprende un'ampia varietà di strategie e opzioni che possono migliorare sia l'efficienza operativa che l'esperienza del cliente. 
+
+#### Configurazione Delle Code
+La configurazione di una coda in Asterisk richiede una comprensione approfondita delle esigenze dell'organizzazione e delle aspettative del cliente. La scelta della strategia di coda, dei parametri di tempo, degli annunci e delle opzioni di musica in attesa sono tutti aspetti fondamentali.
+
+- **Strategie di Selezione degli Agenti**: Asterisk offre diverse strategie per la gestione delle chiamate in coda, come round-robin, meno recenti, random e altre. Ogni strategia ha i suoi vantaggi e può essere selezionata in base alle esigenze specifiche del call center.
+  
+- **Timeout e Limiti**: La configurazione del timeout per le chiamate in coda è essenziale per assicurare che i clienti non attendano troppo. Impostare un limite di tempo ragionevole può migliorare l'esperienza del cliente e gestire le aspettative.
+
+- **Annunci e Musica in Attesa**: Gli annunci periodici e la musica in attesa possono essere utilizzati per informare i clienti sulla loro posizione in coda o sul tempo di attesa previsto. Questo può ridurre la frustrazione dei clienti e migliorare la loro esperienza complessiva.
+
+#### Implementazione Pratica
+La configurazione pratica di una coda in Asterisk può variare in base a diversi fattori, come il volume delle chiamate, il numero di agenti disponibili, e le aspettative del cliente.
+
+- **Esempio di Configurazione**:
+  ```asterisk
+  [queue_sales]
+  strategy=roundrobin
+  timeout=30
+  announce-frequency=90
+  joinempty=yes
+  leavewhenempty=no
+  member => SIP/100
+  member => SIP/101
+  ```
+
+#### Gestione Dinamica e Scalabilità
+Le code in Asterisk non sono statiche e possono essere modificate in tempo reale per rispondere a cambiamenti improvvisi, come picchi di chiamate o cambiamenti nel personale.
+
+- **Adattamento Dinamico**: Le code possono essere programmate per adattarsi automaticamente alle variazioni del carico di lavoro, ad esempio aggiungendo o rimuovendo agenti in base al volume delle chiamate.
+
+- **Scalabilità**: Un sistema di code ben progettato deve essere in grado di scalare facilmente per gestire periodi di alto traffico, mantenendo allo stesso tempo un'elevata qualità del servizio.
+
+#### Funzionalità Avanzate
+L'implementazione di funzionalità avanzate nelle code può significativamente migliorare sia l'efficienza operativa che la soddisfazione del cliente.
+
+- **Callback**: Implementare un'opzione di callback in cui i clienti possono scegliere di essere richiamati invece di attendere in coda.
+  
+- **Integrazione con CRM**: Integrare le code con sistemi CRM per fornire agli agenti informazioni contestuali sui chiamanti, migliorando così la personalizzazione del servizio.
+
+- **Statistiche e Monitoraggio**: Utilizzare strumenti di monitoraggio e reporting per analizzare le prestazioni delle code e identificare aree di miglioramento.
+
+#### Considerazioni sulla Qualità del Servizio
+Nella gestione delle code, è fondamentale equilibrare l'efficienza operativa con la qualità del servizio. Questo include la formazione degli agenti, la gestione dei tempi di attesa e l'assicurazione che i clienti ricevano un servizio di alta qualità.
+
+- **Formazione degli Agenti**: Gli agenti devono essere adeguatamente formati non solo sulle procedure tecniche ma anche sulle competenze di servizio al cliente.
+
+- **Gestione delle Aspettative dei Clienti**: Comunicare chiaramente con i clienti riguardo ai tempi di attesa e alle procedure può aiutare a gestire le loro aspettative.
+
+
 ### 8. Funzioni di Registro e Debugging
 
 Il debugging e il registro delle attività sono aspetti cruciali nella gestione e manutenzione di un sistema Asterisk. Queste funzioni consentono di monitorare, diagnosticare e risolvere problemi che possono verificarsi nel dialplan o nel sistema stesso.
