@@ -73,7 +73,7 @@ Dopo aver configurato il file `voicemail.conf`, dovrai assicurarti che la segret
 3. **Testing**: Esegui test per assicurarti che le chiamate vengano correttamente instradate alla segreteria telefonica e che le notifiche via email vengano inviate correttamente.
 
 
-Per creare un dialplan in Asterisk che permetta di attivare la segreteria telefonica e di dare agli utenti la possibilità di ascoltare i loro messaggi, bisogna configurare sia il dialplan in `extensions.conf` che la segreteria telefonica in `voicemail.conf`. Di seguito ti fornirò un esempio di configurazione per entrambi.
+
 
 ### 1. Configurazione di `voicemail.conf`
 
