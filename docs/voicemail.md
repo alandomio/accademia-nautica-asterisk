@@ -72,3 +72,39 @@ Dopo aver configurato il file `voicemail.conf`, dovrai assicurarti che la segret
 
 3. **Testing**: Esegui test per assicurarti che le chiamate vengano correttamente instradate alla segreteria telefonica e che le notifiche via email vengano inviate correttamente.
 
+
+Per creare un dialplan in Asterisk che permetta di attivare la segreteria telefonica e di dare agli utenti la possibilità di ascoltare i loro messaggi, bisogna configurare sia il dialplan in `extensions.conf` che la segreteria telefonica in `voicemail.conf`. Di seguito ti fornirò un esempio di configurazione per entrambi.
+
+### 1. Configurazione di `voicemail.conf`
+
+In `voicemail.conf`, configura le caselle vocali degli utenti. Ecco un esempio:
+
+```ini
+[default]
+100 => 1234, Utente Uno, email@esempio.com
+101 => 5678, Utente Due, email@esempio.com
+```
+
+Qui, gli utenti 100 e 101 hanno caselle vocali con un PIN rispettivamente di `1234` e `5678`.
+
+### 2. Configurazione di `extensions.conf`
+
+In `extensions.conf`, devi configurare il dialplan per gestire le chiamate in entrata e la segreteria telefonica. Ecco un esempio:
+
+```ini
+[internal]
+exten => _XXX,1,Dial(SIP/${EXTEN},20)
+exten => _XXX,n,VoiceMail(${EXTEN}@default,u)
+exten => _XXX,n,Hangup()
+
+exten => *98,1,Answer()
+exten => *98,n,Wait(1)
+exten => *98,n,VoiceMailMain(${CALLERID(num)}@default)
+exten => *98,n,Hangup()
+```
+
+In questo esempio:
+- Le chiamate verso numeri a tre cifre (XXX) vengono gestite nel contesto `[internal]`.
+- Il comando `Dial` prova a chiamare il numero SIP corrispondente per 20 secondi.
+- Se la chiamata non viene risposta, `VoiceMail` permette all'utente di lasciare un messaggio nella segreteria telefonica (`u` per "unavailable").
+- `*98` è un codice comune per accedere alla propria segreteria telefonica. `VoiceMailMain` permette all'utente di ascoltare i suoi messaggi.
