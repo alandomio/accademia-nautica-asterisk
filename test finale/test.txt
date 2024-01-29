@@ -1,0 +1,32 @@
+Obiettivo del test: Configurare un sistema VOIP di base utilizzando Asterisk. Questo
+comprenderà la configurazione di utenti SIP e la creazione di un semplice dialplan.
+
+Parte 1: Configurazione degli Utenti SIP
+1. Modifica di sip.conf
+○ Crea almeno tre utenti SIP con le seguenti caratteristiche:
+■ Nome utente, password, e specifica codec.
+○ Assicurati che ogni utente abbia configurazioni uniche.
+○ Abilita la sicurezza necessaria e le opzioni di registrazione.
+
+Parte 2: Creazione del Dialplan
+1. Modifica di extensions.conf
+○ Crea un dialplan che permetta:
+■ Chiamate tra gli utenti SIP configurati.
+■ Un IVR di base con almeno 3 opzioni.
+■ Instradamento delle chiamate a una segreteria telefonica, se fuori
+dall’orario di lavoro ( orario lavoro: lun-ven 9:00 - 17:00)
+
+○ Configura una stanza per conferenze multi-utente
+○ Includi funzionalità come musica in attesa e una coda di chiamata.
+
+Requisiti Aggiuntivi:
+● Documenta ogni modifica effettuata ai file di configurazione.
+● Fornisci una breve spiegazione per ogni passaggio e scelta di configurazione.
+Criteri di Valutazione:
+● Correttezza della configurazione di sip.conf e extensions.conf.
+● Funzionalità del dialplan implementato.
+● Chiarezza e completezza della documentazione.
+Consegna:
+● I file modificati sip.conf e extensions.conf.
+● Eventualmente un documento che descrive le modifiche apportate e la logica dietro ogni
+decisione di configurazione.
